@@ -13,13 +13,10 @@ import { JwtStrategy } from './strategies/jwt.strategy';
   imports: [
     UsersModule,
     PassportModule,
-    JwtModule.registerAsync({
-      imports: [ConfigModule],
-      useFactory: (config: ConfigService) => ({
-        secret: config.get<string>('JWT_SECRET'),
-        signOptions: { expiresIn: '7d' },
-      }),
-      inject: [ConfigService],
+    // On remplace registerAsync par register tout court
+    JwtModule.register({
+      secret: 'ma_super_cle_secrete_123', // DOIT ÊTRE LA MÊME QUE DANS JWT.STRATEGY.TS
+      signOptions: { expiresIn: '7d' },
     }),
   ],
   providers: [AuthService, LocalStrategy, JwtStrategy],

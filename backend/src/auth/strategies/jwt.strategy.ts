@@ -14,7 +14,8 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
       ignoreExpiration: false,
-      secretOrKey: config.get<string>('JWT_SECRET') ?? 'fallback_secret',
+      // On écrit la clé directement ici pour contourner le bug du fichier .env
+      secretOrKey: 'ma_super_cle_secrete_123', 
     });
   }
 

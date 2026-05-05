@@ -12,10 +12,14 @@ import { MediaModule } from './media/media.module';
 import { ChatModule } from './chat/chat.module';
 import { NotificationsModule } from './notifications/notifications.module';
 import { StoriesModule } from './stories/stories.module';
+import { AdsModule } from './ads/ads.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({ isGlobal: true }),
+ConfigModule.forRoot({ 
+  isGlobal: true,
+  envFilePath: '.env', // On précise le chemin
+}),
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'uploads'),
       serveRoot: '/uploads',
@@ -41,6 +45,7 @@ import { StoriesModule } from './stories/stories.module';
     ChatModule,
     NotificationsModule,
     StoriesModule,
+    AdsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

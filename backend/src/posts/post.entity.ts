@@ -28,6 +28,9 @@ export class Post {
   @Column({ default: 0 })
   commentsCount: number;
 
+  @Column({ default: 0 })
+  sharesCount: number;
+
   @CreateDateColumn()
   createdAt: Date;
 }
