@@ -119,4 +119,4 @@ Scannez le QR code avec Expo Go.
 
 ## 👩‍💻 Auteure
 
-**Farahe El-Montaser** — [@FARAHEltem](https://github.com/FARAHEltem)
+**Farahe El-Montaser** — [@farahe-elmontaser](https://github.com/farahe-elmontaser)
